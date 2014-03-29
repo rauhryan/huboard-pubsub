@@ -33,7 +33,7 @@ module Huboard
 
     Sinatra::PubSub.set :session_secret, ENV["SESSION_SECRET"]
 
-    if true
+    if false
 
     Sinatra::PubSub::App.before do
 
