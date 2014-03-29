@@ -10,6 +10,10 @@ module Huboard
       disable :static
     end
 
+    configure :production, :staging do 
+      require "newrelic_rpm"
+    end
+
     use Rack::Deflater
     register Sinatra::PubSub
   end
