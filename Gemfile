@@ -10,3 +10,6 @@ gem 'thin'
 gem 'sinatra-pubsub'
 gem 'eventmachine'
 
+group :production do
+  gem 'newrelic_rpm'
+end

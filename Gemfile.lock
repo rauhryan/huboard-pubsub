@@ -4,6 +4,7 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    newrelic_rpm (3.7.3.204)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
@@ -28,6 +29,7 @@ PLATFORMS
 DEPENDENCIES
   erubis
   eventmachine
+  newrelic_rpm
   rake
   sinatra
   sinatra-pubsub
