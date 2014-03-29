@@ -33,6 +33,8 @@ module Huboard
 
     Sinatra::PubSub.set :session_secret, ENV["SESSION_SECRET"]
 
+    if false
+
     Sinatra::PubSub::App.before do
 
       begin
@@ -58,6 +60,7 @@ module Huboard
         halt 403
       end
 
+    end
     end
   end
 end
