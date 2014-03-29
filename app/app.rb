@@ -33,7 +33,7 @@ module Huboard
 
     Sinatra::PubSub.set :session_secret, ENV["SESSION_SECRET"]
 
-    if false
+    if true
 
     Sinatra::PubSub::App.before do
 
@@ -53,11 +53,11 @@ module Huboard
         client = Octokit::Client.new :access_token => warden["token"]
 
         response = client.agent.call(:get, "./")
-        halt 403 unless response.status == 200
+        halt [403, "Bad auth token"] unless response.status == 200
 
       rescue => e
         puts "==== halt ===="
-        halt 403
+        halt [403, "Failed to pass authentication"]
       end
 
     end
