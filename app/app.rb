@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler'
 require 'cgi'
 require 'octokit'
+require 'warden/github'
 
 Octokit.api_endpoint = ENV["GITHUB_API_ENDPOINT"] || "https://api.github.com"
 
