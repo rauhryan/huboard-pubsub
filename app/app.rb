@@ -22,7 +22,28 @@ module Huboard
       require "newrelic_rpm"
     end
 
+    helpers do
+      def parse_cookie(env)
+        begin
+          session_id = Rack::Session::Cookie.new self,
+            :key => 'rack.session',
+            :path => '/',
+            :secret => settings.session_secret,
+            :expire_after => 2592000,
+            :secure => settings.production?
 
+          session_hash = Rack::Session::Abstract::SessionHash.new session_id, env
+
+        rescue => e
+          puts "==== halt ===="
+          halt [403, "Failed to pass authentication"]
+        end
+      end
+    end
+
+    get "/cookie_test/?" do
+      return parse_cookie(env)
+    end
 
     use Rack::Deflater
     register Sinatra::PubSub
