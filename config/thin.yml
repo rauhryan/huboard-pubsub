@@ -1,7 +1,7 @@
 ---
 user: huboard_pubsub
 group: huboard_pubsub
-pid: /var/run/huboard_pubsub/tmp/pids/huboard_pubsub.pid
+pid: /var/run/huboard_pubsub/huboard_pubsub.pid
 log: /var/log/huboard_pubsub/app.log
 max_conns: 2048
 max_persistent_conns: 2048
@@ -10,6 +10,6 @@ servers: 1
 threaded: true
 no-epoll: true
 daemonize: true
-socket: /var/run/tmp/sockets/huboard_pubsub.sock
+socket: /tmp/huboard_pubsub.sock
 chdir: /opt/huboard_pubsub
 tag: huboard_pubsub
