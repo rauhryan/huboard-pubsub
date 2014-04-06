@@ -1,15 +1,11 @@
 ---
-user: huboard_pubsub
-group: huboard_pubsub
-pid: /var/run/huboard_pubsub/huboard_pubsub.pid
-log: /var/log/huboard_pubsub/app.log
+pid: ./app.pid
+log: ./app.log
 max_conns: 2048
 max_persistent_conns: 2048
 environment: production
 servers: 1
 threaded: true
-no-epoll: true
 daemonize: true
-socket: /tmp/huboard_pubsub.sock
-chdir: /opt/huboard_pubsub
-tag: huboard_pubsub
+socket: ./thin.sock
+tag: huboard-pubsub
